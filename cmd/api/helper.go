@@ -1,4 +1,4 @@
-package toolbox
+package jsonToolBox
 
 import (
 	"encoding/json"
