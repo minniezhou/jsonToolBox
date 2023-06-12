@@ -61,7 +61,7 @@ func ErrorJson(w http.ResponseWriter, message string, statusCode ...int) error {
 	if len(statusCode) > 0 {
 		status = statusCode[0]
 	}
-	response := jsonResponse{
+	response := JsonResponse{
 		Error:   true,
 		Message: message,
 	}
