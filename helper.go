@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 )
 
 type JsonResponse struct {
@@ -66,4 +67,12 @@ func ErrorJson(w http.ResponseWriter, message string, statusCode ...int) error {
 		Message: message,
 	}
 	return WriteJson(w, status, response)
+}
+
+func GetEnv(key, default_value string) string {
+	value := os.Getenv(key)
+	if len(value) != 0 {
+		return value
+	}
+	return default_value
 }
